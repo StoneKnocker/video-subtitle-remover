@@ -916,8 +916,14 @@ if __name__ == '__main__':
     # 2. 按以下顺序传入字幕区域
     # sub_area = (ymin, ymax, xmin, xmax)
     # 3. 新建字幕提取对象
+    # {xmin: 123.1615120274914, xmax: 1803.4364261168384, ymin: 773.816707323622, ymax: 971.7800474458217}
+    xmin= 123.1615120274914
+    xmax= 1803.4364261168384
+    ymin= 773.816707323622
+    ymax= 971.7800474458217
+    area = (ymin, ymax, xmin, xmax)
     if is_video_or_image(video_path):
-        sd = SubtitleRemover(video_path, sub_area=None)
+        sd = SubtitleRemover(video_path, sub_area=area)
         sd.run()
     else:
         print(f'Invalid video path: {video_path}')
