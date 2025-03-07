@@ -25,6 +25,9 @@ build:
   # run:
   #   - "echo env is ready!"
   #   - "echo another command if needed"
+  run:
+    - "pip install paddlepaddle-gpu==2.4.2.post117 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html"
+    - "pip install torch==2.0.1 torchvision==0.15.2 --index-url https://download.pytorch.org/whl/cu118"
 
 # predict.py defines how predictions are run on your model
 predict: "predict.py:Predictor"
