@@ -39,7 +39,9 @@ class Predictor(BasePredictor):
         # return postprocess(output)
 
         # video is a http path,  download the video to local
-        video_path = self.download_video(video)
+        # video_path = self.download_video(video)
+        video_path = video
+        print("video path: ", video_path)
 
         sd = SubtitleRemover(video_path, sub_area=None)
         sd.run()

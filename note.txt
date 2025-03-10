@@ -6,4 +6,5 @@ conda install pytorch==2.0.1 torchvision==0.15.2 pytorch-cuda=11.7 -c pytorch -c
 
 curl http://localhost:5000/predictions -X POST \
     -H 'Content-Type: application/json' \
-    -d '{"input": {"video_path": "https://kapkap-common.stariidata.com/web_video/67ce8050675991550AQeMt32AQ1798.mp4"}}'
+    -H 'Prefer: respond-async' \
+    -d '{"input": {"video": "https://kapkap-common.stariidata.com/web_video/67ce8050675991550AQeMt32AQ1798.mp4"}}'
