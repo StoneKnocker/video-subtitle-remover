@@ -5,7 +5,6 @@ build:
   # set to true if your model requires a GPU
   gpu: true
   cuda: "11.7"
-  python_requirements: requirements.txt
 
   # a list of ubuntu apt packages to install
   # system_packages:
@@ -28,6 +27,8 @@ build:
   run:
     - "pip install paddlepaddle-gpu==2.4.2.post117 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html"
     - "pip install torch==2.0.1 torchvision==0.15.2 --index-url https://download.pytorch.org/whl/cu118"
+
+  python_requirements: requirements.txt
 
 # predict.py defines how predictions are run on your model
 predict: "predict.py:Predictor"
