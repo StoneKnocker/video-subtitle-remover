@@ -5,6 +5,7 @@ build:
   # set to true if your model requires a GPU
   gpu: true
   cuda: "11.7"
+  image: "r8.im/stoneknocker/video-watermark-remover"
 
   # a list of ubuntu apt packages to install
   # system_packages:
