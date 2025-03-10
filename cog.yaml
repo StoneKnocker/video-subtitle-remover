@@ -27,6 +27,7 @@ build:
   run:
     - "pip install paddlepaddle-gpu==2.4.2.post117 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html"
     - "pip install torch==2.0.1 torchvision==0.15.2 --index-url https://download.pytorch.org/whl/cu118"
+    - "pip install scikit-image==0.17.2"
 
   python_requirements: requirements.txt
 
