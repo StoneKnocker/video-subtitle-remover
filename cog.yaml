@@ -4,7 +4,7 @@
 build:
   # set to true if your model requires a GPU
   gpu: true
-  cuda: "11.8"
+  cuda: "11.7"
   python_requirements: requirements.txt
 
   # a list of ubuntu apt packages to install
