@@ -24,6 +24,7 @@ import math
 from paddle import inference
 import time
 from ppocr.utils.logging import get_logger
+import backend.config as config
 
 
 def str2bool(v):
@@ -43,7 +44,7 @@ def init_args():
     # params for text detector
     parser.add_argument("--image_dir", type=str)
     parser.add_argument("--det_algorithm", type=str, default='DB')
-    parser.add_argument("--det_model_dir", type=str)
+    parser.add_argument("--det_model_dir", type=str, default=config.DET_MODEL_PATH)
     parser.add_argument("--det_limit_side_len", type=float, default=960)
     parser.add_argument("--det_limit_type", type=str, default='max')
 

@@ -37,8 +37,8 @@ class SubtitleDetect:
         # 获取参数对象
         importlib.reload(config)
         args = utility.parse_args()
-        args.det_algorithm = 'DB'
-        args.det_model_dir = config.DET_MODEL_PATH
+        # args.det_algorithm = 'DB'
+        # args.det_model_dir = config.DET_MODEL_PATH
         self.text_detector = TextDetector(args)
         self.video_path = video_path
         self.sub_area = sub_area
