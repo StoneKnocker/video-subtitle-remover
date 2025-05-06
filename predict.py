@@ -25,4 +25,4 @@ class Predictor(BasePredictor):
         video_path = str(video)
         sd = SubtitleRemover(video_path, sub_area=None)
         sd.run()
-        return sd.video_out_name
+        return Path(sd.video_out_name)
