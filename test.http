@@ -1,0 +1,9 @@
+###
+POST http://localhost:6000/predictions
+Content-Type: application/json
+
+{
+    "input": {
+        "video": "https://replicate.delivery/pbxt/Mv5aN7JmlzbCFYBnHNWzqeMcXRyUVXRZZSsqOpTZBbInwYLI/3054450f-b308-4f7d-9b6f-406838e42a81.mp4"
+    }
+}

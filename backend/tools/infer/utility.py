@@ -135,6 +135,11 @@ def init_args():
 
     parser.add_argument("--show_log", type=str2bool, default=True)
     parser.add_argument("--use_onnx", type=str2bool, default=False)
+
+
+    # adapt to replicate 
+    parser.add_argument("--await-explicit-shutdown", type=bool)
+    parser.add_argument("--upload-url", type=str)
     return parser
 
 
