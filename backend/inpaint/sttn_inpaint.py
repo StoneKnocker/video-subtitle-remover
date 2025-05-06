@@ -272,6 +272,13 @@ class STTNVideoInpaint:
             mask = mask[:, :, None]
         # 得到修复区域位置
         inpaint_area = self.sttn_inpaint.get_inpaint_area_by_mask(frame_info['H_ori'], split_h, mask)
+        
+        ## 修复 errlog 2
+        # 确保 inpaint_area 不为空
+        if not inpaint_area:
+            print("Warning: No inpaint area detected. Creating default area.")
+            inpaint_area = [(0, min(split_h, frame_info['H_ori']))]
+        
         # 遍历每一次的迭代次数
         for i in range(rec_time):
             start_f = i * self.clip_gap  # 起始帧位置

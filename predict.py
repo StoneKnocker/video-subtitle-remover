@@ -25,4 +25,4 @@ class Predictor(BasePredictor):
         video_path = str(video)
         sd = SubtitleRemover(video_path, sub_area=None)
         sd.run()
-        return f"{os.path.basename(video_path).rsplit('.', 1)[0]}_no_sub.mp4"
+        return sd.video_out_name
