@@ -884,6 +884,7 @@ class SubtitleRemover:
                                        "-vcodec", "libx264" if config.USE_H264 else "copy",
                                        "-acodec", "copy",
                                        "-loglevel", "error", self.video_out_name]
+                print('audio_merge_command: ', " ".join(audio_merge_command))
                 try:
                     subprocess.check_output(audio_merge_command, stdin=open(os.devnull), shell=True)
                 except Exception:
