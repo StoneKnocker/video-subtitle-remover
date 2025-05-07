@@ -35,18 +35,9 @@ if 'ProPainter.pth' not in os.listdir(VIDEO_INPAINT_MODEL_PATH):
     fs.merge(input_dir=VIDEO_INPAINT_MODEL_PATH)
 
 # 指定ffmpeg可执行程序路径
-sys_str = platform.system()
-if sys_str == "Windows":
-    ffmpeg_bin = os.path.join('win_x64', 'ffmpeg.exe')
-elif sys_str == "Linux":
-    ffmpeg_bin = os.path.join('linux_x64', 'ffmpeg')
-else:
-    ffmpeg_bin = os.path.join('macos', 'ffmpeg')
+ffmpeg_bin = os.path.join('linux_x64', 'ffmpeg')
 FFMPEG_PATH = os.path.join(BASE_DIR, '', 'ffmpeg', ffmpeg_bin)
 
-# if 'ffmpeg.exe' not in os.listdir(os.path.join(BASE_DIR, '', 'ffmpeg', 'win_x64')):
-#     fs = Filesplit()
-#     fs.merge(input_dir=os.path.join(BASE_DIR, '', 'ffmpeg', 'win_x64'))
 # 将ffmpeg添加可执行权限
 os.chmod(FFMPEG_PATH, stat.S_IRWXU + stat.S_IRWXG + stat.S_IRWXO)
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'

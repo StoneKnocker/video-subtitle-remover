@@ -870,9 +870,9 @@ class SubtitleRemover:
                                  "-y", "-i", self.video_path,
                                  "-acodec", "copy",
                                  "-vn", "-loglevel", "error", temp.name]
-        use_shell = True if os.name == "nt" else False
+        print('audio_extract_command: ', " ".join(audio_extract_command))
         try:
-            subprocess.check_output(audio_extract_command, stdin=open(os.devnull), shell=use_shell)
+            subprocess.check_output(audio_extract_command, stdin=open(os.devnull), shell=True)
         except Exception as e:
             print('fail to extract audio: ', e)
             return
@@ -885,7 +885,7 @@ class SubtitleRemover:
                                        "-acodec", "copy",
                                        "-loglevel", "error", self.video_out_name]
                 try:
-                    subprocess.check_output(audio_merge_command, stdin=open(os.devnull), shell=use_shell)
+                    subprocess.check_output(audio_merge_command, stdin=open(os.devnull), shell=True)
                 except Exception:
                     print('fail to merge audio')
                     return
