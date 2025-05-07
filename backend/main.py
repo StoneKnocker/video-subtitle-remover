@@ -873,8 +873,8 @@ class SubtitleRemover:
         use_shell = True if os.name == "nt" else False
         try:
             subprocess.check_output(audio_extract_command, stdin=open(os.devnull), shell=use_shell)
-        except Exception:
-            print('fail to extract audio')
+        except Exception as e:
+            print('fail to extract audio: ', e)
             return
         else:
             if os.path.exists(self.video_temp_file.name):
